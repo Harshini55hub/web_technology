@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-image: linear-gradient(to top right, rgb(217, 206, 121), rgb(242, 175, 59));
+}
+
+h1 {
+    text-align: center;
+    position: relative;
+    top: 50px;
+}
+
+#login-container {
+    width: 400px;
+    height: 600px;
+    background-color: rgb(242, 229, 212);
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgb(96, 38, 2);
+}
+
+table {
+    border-collapse: separate; 
+    border-spacing: 5px 20px;
+    position: relative;
+    top: 100px;
+    margin: auto;
+}
+
+input {
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+label {
+    color: black;
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+button {
+    background-image: linear-gradient(to top right, rgb(217, 206, 121), rgb(242, 175, 59));
+    color: black;
+    border-radius: 10px;
+    padding: 10px 20px;
+    position: relative;
+    top: 40px;
+}
+
+button:hover {
+    background-image: linear-gradient(to top right, rgb(242, 175, 59), rgb(217, 206, 121));
+    padding: 10px 25px;
+    font-size: large;
+}
+
+.form-footer {
+    color: black;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;   
+    position: relative;
+    top: 150px;
+    text-align: center;
+}

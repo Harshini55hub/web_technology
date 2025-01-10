@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black and White Functional Page</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            padding: 10px 20px;
+            color: #000;
+        }
+
+        .navbar a {
+            color: #000;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            text-decoration: none;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: #000;
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .section h2 {
+            margin-bottom: 20px;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .cards-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Card Styles */
+        .card {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 300px;
+            padding: 15px;
+            text-align: center;
+            color: #000; /* Ensures black text for cards */
+        }
+
+        .card h3 {
+            color: #000; /* Black color for titles */
+        }
+
+        .card p {
+            color: #000; /* Black color for descriptions */
+        }
+
+        .card img {
+            width: 100%; /* Ensure images stretch to the full width of the card */
+            height: 200px; /* Fixed height for all images */
+            object-fit: cover; /* Ensures the image fills the container without distortion */
+            border-radius: 5px;
+            margin-bottom: 10px;
+            display: block; /* Make the image behave as block content */
+        }
+
+        .card .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .card button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            flex: 1;
+        }
+
+        .buy-btn {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .product-btn {
+            background-color: #000;
+            color: #fff;
+            border: 1px solid #000;
+        }
+
+        .buy-btn:hover, .product-btn:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="home.html">Home</a>
+        <div class="dropdown">
+            <a href="#">Category</a>
+            <div class="dropdown-content">
+                <a href="#shirt-section">Shirt</a>
+                <a href="#pants-section">Pants</a>
+                <a href="#shoes-section">Shoes</a>
+            </div>
+        </div>
+        <a href="" id="view-cart" onclick="viewCart()">Cart</a>
+       
+    </nav>
+
+    <!-- Sections -->
+    <div id="shirt-section" class="section">
+        <h2>Shirts</h2>
+        <div class="cards-container">
+            <div class="card">
+                <img src="womenshirt1.avif" alt="Shirt 1">
+                <h3>Floral Blouse</h3>
+                <p>Light and breezy floral blouse.</p>
+                <div class="buttons">
+                    <button class="buy-btn">Buy</button>
+                    <button class="product-btn" onclick="AddToCart('women_product_name_1','Rs.1200')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="womenshirt2.avif" alt="Shirt 2">
+                <h3>Sleeveless Top</h3>
+                <p>Perfect for summer outings.</p>
+                <div class="buttons">
+                    <button class="buy-btn">Buy</button>
+                    <button class="product-btn" onclick="AddToCart('women_product_name_2','Rs.900')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="womenshirt3.avif" alt="Shirt 3">
+                <h3>Chiffon Blouse</h3>
+                <p>Elegant and chic chiffon blouse.</p>
+                <div class="buttons">
+                    <button class="buy-btn">Buy</button>
+                    <button class="product-btn" onclick="AddToCart('women_product_name_3','Rs.1100')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="pants-section" class="section">
+        <h2>Pants</h2>
+        <div class="cards-container">
+            <div class="card">
+                <img src="pant1.avif" alt="Pants 1">
+                <h3>Skinny Jeans</h3>
+                <p>Trendy and comfortable skinny jeans.</p>
+                <div class="buttons">
+                    <button class="buy-btn">Buy</button>
+                    <button class="product-btn" onclick="AddToCart('women_product_name_4','Rs.1300')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="pants2.jpg" alt="Pants 2">
+                <h3>Palazzo Pants</h3>
+                <p>Flowy and fashionable palazzo pants.</p>
+                <div class="buttons">
+                    <button class="buy-btn">Buy</button>
+                    <button class="product-btn" onclick="AddToCart('women_product_name_5','Rs.1000')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="pants3.avif" alt="Pants 3">
+                <h3>Leggings</h3>
+                <p>Comfortable and versatile leggings.</p>
+                <div class="buttons">
+                    <button class="buy-btn">Buy</button>
+                    <button class="product-btn" onclick="AddToCart('women_product_name_6','Rs.800')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="shoes-section" class="section">
+        <h2>Shoes</h2>
+        <div class="cards-container">
+            <div class="card">
+                <img src="SHOES1.jpg" alt="Shoes 1">
+                <h3>Heels</h3>
+                <p>Elegant heels for formal events.</p>
+                <div class="buttons">
+                    <button class="buy-btn">Buy</button>
+                    <button class="product-btn" onclick="AddToCart('women_product_name_7','Rs.1500')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="SHOES2.jpg" alt="Shoes 2">
+                <h3>Flats</h3>
+                <p>Comfortable and stylish flat shoes.</p>
+                <div class="buttons">
+                    <button class="buy-btn">Buy</button>
+                    <button class="product-btn" onclick="AddToCart('women_product_name_8','Rs.1200')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="SHOES3.jpg" alt="Shoes 3">
+                <h3>Sandals</h3>
+                <p>Perfect for a casual day out.</p>
+                <div class="buttons">
+                    <button class="buy-btn">Buy</button>
+                    <button class="product-btn" onclick="AddToCart('women_product_name_9','Rs.1000')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        
+        function AddToCart(productName, productPrice) {
+            cart.push({ name: productName, price: productPrice });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${productName} added to the cart`);
+        }
+
+        let viewCartLink = document.getElementById('view-cart'); 
+viewCartLink.addEventListener('click', (e) => {
+     e.preventDefault(); 
+     viewCart();
+     });
+
+
+function viewCart()
+        {
+            
+            window.location.href="cart.html";
+        }
+    </script>
+    </body>
+    </html>
+
+        
